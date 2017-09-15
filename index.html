@@ -7,8 +7,17 @@
 <body>
 <h1>DOM Storage Benchmark</h1>
 <pre id="display">Duration:</pre>
-<label for="iterations">Iterations:</label>
-<input type="number" id="iterations" value="1"/>
+<div class="separator">
+  <label for="iterations">Iterations:</label>
+  <input type="number" id="iterations" value="1"/>
+</div>
+<div class="separator">
+<span><strong>Storage type:</strong></span>
+  <input type="radio" name="storageType" value="localStorage" id="localStorageType" checked/>
+  <label for="localStorageType">localStorage</label>
+  <input type="radio" name="storageType" value="sessionStorage" id="sessionStorageType"/>
+  <label for="sessionStorageType">sessionStorage</label>
+</div>
 <h2>Tests:</h2>
 <div id="container"></div>
 <script src="script.js"></script>
