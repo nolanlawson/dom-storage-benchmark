@@ -22,11 +22,17 @@
     },
     {
       name: 'Write multiple small strings',
-      setup: function () {},
-      test: function (storage) {
+      setup: function () {
+        var keys = []
         for (var i = 0; i < 1000; i ++) {
           var key = btoa('' + i + (i + 1) + (i + 2) + (i + 3) + (i + 4) + (i + 5) + (i + 6))
-          storage.setItem(key, '')
+          keys.push(key)
+        }
+        return keys
+      },
+      test: function (storage, keys) {
+        for (var i = 0; i < 1000; i ++) {
+          storage.setItem(keys[i], '')
         }
       }
     },
